@@ -8,13 +8,18 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let g:airline_theme='dark'
 
-" airline symbols
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" airling symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
