@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-dispatch'
 call plug#end()
 
 let g:NERDTreeDirArrowExpandable = '+'
