@@ -12,10 +12,16 @@ Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-dispatch'
+Plug 'derekwyatt/vim-fswitch'
+Plug '~/swift/utils/vim'
 call plug#end()
 
+set mouse=a
+
+let mapleader=';'
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+
 let g:airline_theme='dark'
 
 if executable('ag')
@@ -31,7 +37,12 @@ let g:airline_right_alt_sep = ''
 "let g:airline_symbols.readonly = ''
 "let g:airline_symbols.linenr = ''
 
-:command Build make | copen
+let c_style_languages_query = '"m$ | c$ | cpp$ | h$ | swift$ "'
+
+nnoremap <silent> <Leader>l         :Lines<CR>
+nnoremap <silent> <Leader>f         :Files<CR>
+nnoremap <silent> <Leader>fc        :call fzf#vim#files(0, fzf#vim#with_preview({'options':'--query=' . g:c_style_languages_query}))<CR>
+nnoremap <silent> <Leader>ag        :Ag<CR>
 
 highlight VertSplit cterm=NONE
 
