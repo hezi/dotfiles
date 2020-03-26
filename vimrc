@@ -44,6 +44,11 @@ nnoremap <silent> <Leader>f         :Files<CR>
 nnoremap <silent> <Leader>fc        :call fzf#vim#files(0, fzf#vim#with_preview({'options':'--query=' . g:c_style_languages_query}))<CR>
 nnoremap <silent> <Leader>ag        :Ag<CR>
 
+map ml :Make launch<CR>
+map mm :Make<CR>
+map <C-A-Up> :FSH<CR>
+map <C-A-Down> :FSH<CR>
+
 highlight VertSplit cterm=NONE
 
 " Spaces & Tabs {{{
